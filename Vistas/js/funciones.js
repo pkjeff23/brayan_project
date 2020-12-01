@@ -26,17 +26,19 @@ $('#btnguardar').click(function(e){
     let datos = $('#frmajax').serialize();
     //datos = {};
     alert (datos);
-    return false;
     $.ajax({
         type: "POST",
-        url: "Controladores/RegistrarEppC.php",
+        url: "Controladores/prueba.php",
         data: JSON.stringify(datos),
         success: function(r){
-            if (r==1) {
+            if (r==0) {
                 alert("guardado exitoso");
             }else{
                 alert("No Guardao");
             }
+        },
+        error(r){
+            console.log(r);
         }
     });
     return false;

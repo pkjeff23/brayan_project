@@ -1,10 +1,5 @@
 <?php
-	session_start();
-	if(!$_SESSION["ingreso"]){
 
-		header("location:index.php?ruta=ingreso");
-		exit();
-	}
 ?>
 <div id="container">
     <br>
@@ -112,7 +107,7 @@
             <br>
             <div style="display: flex; justify-content: center;">
                 <div style="width: 800px;">
-                    <input type="submit" id="btnguardar" value="Registrar" class="btn btn-warning btn-lg btn-block btn-guardar">
+                    <input name="insertar" type="submit" id="btnguardar" value="Registrar" class="btn btn-warning btn-lg btn-block btn-guardar">
                 </div>
             </div>
         </form>

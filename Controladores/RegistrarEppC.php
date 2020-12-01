@@ -7,8 +7,6 @@
 
             if(isset($_POST["nombreR"])){
                 
-                $usuario = $_SESSION["usuario"];//Usuario Loggeado
-                
                 $fechaG = date("Y-m-d H:i:s"); //Traer hora y fecha para guardar en el campo fecha Guardado
                 
                 $tabla = "ct_Elementos";
@@ -27,7 +25,7 @@
                     foreach ($key as $tmp => $value) {
                         //Informacion que le voy a enviar al modelo.
                         $datosC = array("fechaCreacion"=>$_POST["FechaR"], "nombres"=> $_POST["nombreR"], 
-                                        "usuario"=>$usuario, "fechaGuardado"=>$fechaG, "descripcion"=>$_POST["elementoR"], 
+                                         "fechaGuardado"=>$fechaG, "descripcion"=>$_POST["elementoR"], 
                     "realiza"=>$_POST["RelementoR"], "observaciones"=>$_POST["observacionesR"]);   
                     }
                     //return 1;
@@ -41,7 +39,7 @@
                 foreach ($Mequipos as $e => $key) {
                     foreach ($key as $tmp => $value) {
                         $datosC = array("fechaCreacion"=>$_POST["FechaR"], "nombres"=>$_POST["nombreR"], 
-                                        "usuario"=>$usuario, "fechaGuardado"=>$fechaG, "descripcion"=>$value, 
+                                         "fechaGuardado"=>$fechaG, "descripcion"=>$value, 
                                         "realiza"=>$_POST["RelementoR"], "observaciones"=>$_POST["observacionesR"]);   
                     }
                     $respuesta = EppM::RegistrarEppM($tablaC, $datosC);
@@ -52,7 +50,7 @@
                 foreach ($Mbio as $e => $key) {
                     foreach ($key as $tmp => $value) {
                         $datosC = array("fechaCreacion"=>$_POST["FechaR"], "nombres"=>$_POST["nombreR"], 
-                                        "usuario"=>$usuario, "fechaGuardado"=>$fechaG, "descripcion"=>$value, 
+                                         "fechaGuardado"=>$fechaG, "descripcion"=>$value, 
                                         "realiza"=>$_POST["RelementoR"], "observaciones"=>$_POST["observacionesR"]);   
                     }
                     $respuesta = EppM::RegistrarEppM($tablaC, $datosC);
@@ -63,7 +61,7 @@
                 foreach ($Mprocedure as $e => $key) {
                     foreach ($key as $tmp => $value) {
                         $datosC = array("fechaCreacion"=>$_POST["FechaR"], "nombres"=>$_POST["nombreR"], 
-                                        "usuario"=>$usuario, "fechaGuardado"=>$fechaG, "descripcion"=>$value, 
+                                         "fechaGuardado"=>$fechaG, "descripcion"=>$value, 
                                         "realiza"=>$_POST["RelementoR"], "observaciones"=>$_POST["observacionesR"]);   
                     }
                     $respuesta = EppM::RegistrarEppM($tablaC, $datosC);
